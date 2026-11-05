@@ -1,16 +1,33 @@
-# React + Vite
+# ExamMate
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Exam timetable scheduler built with React, Vite, Tailwind CSS and Supabase.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Clone the repository and open the folder:
+   git clone https://github.com/<your-username>/ExamMate.git
+   cd ExamMate
 
-## React Compiler
+2. Install dependencies:
+   npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Create a Supabase project at https://supabase.com.
 
-## Expanding the Oxlint configuration
+4. Run `supabase/schema.sql` in the Supabase SQL Editor.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+5. In Supabase, go to Authentication > URL Configuration and set:
+   - Site URL: http://localhost:5173
+   - Redirect URLs: http://localhost:5173/reset-password and http://localhost:5173/login
+
+6. Copy `.env.example` to `.env` and fill in your project URL and anon key
+   (Project Settings > API).
+
+7. Start the app:
+   npm run dev
+
+Open http://localhost:5173 in your browser.
+
+## Never commit
+
+- `.env` (contains your Supabase keys)
+- The `service_role` key, under any name
